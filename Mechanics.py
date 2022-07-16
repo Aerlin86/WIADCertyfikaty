@@ -5,32 +5,42 @@ from PDFClass import PDF
 
 
 directory = None
+header_img = None
+conf_title_img = None
+footer_img = None
 
 
-def save_to() -> dir:
+def save_to() -> None:
     """Choose right dir to save all PDFs"""
     global directory
-    directory = tkinter.filedialog.askdirectory(initialdir="/", title='Proszę wybierz folder do zapisu certyfikatów')
-    return directory
+    directory_obj = tkinter.filedialog.askdirectory(initialdir="/", title='Proszę wybierz folder do zapisu certyfikatów')
+    directory = directory_obj
 
 
 def header_logo() -> None:
     """Sets top-right logo"""
-    pass
+    global header_img
+    header_img_object = tkinter.filedialog.askopenfile(initialdir="/", title='Proszę wybierz obraz z nazwą konferencji')
+    header_img = header_img_object.name
 
 
 def conference_title() -> None:
-    """Sets tile in center of PDF"""
-    pass
+    """Sets title in center of PDF"""
+    global conf_title_img
+    conf_title_object = tkinter.filedialog.askopenfile(initialdir="/", title='Proszę wybierz obraz z nazwą konferencji')
+    conf_title_img = conf_title_object.name
 
 
 def footer_sponsors() -> None:
     """Sets footer with sponsors"""
-    pass
+    global footer_img
+    footer_img_object = tkinter.filedialog.askopenfile(initialdir="/", title='Proszę wybierz obraz z nazwą konferencji')
+    footer_img = footer_img_object.name
 
 
 def loadfile() -> None:
-    """Loads Excel file and put data into list"""
+    """Loads Excel file, put data into list and generate PFD file"""
+
     # CHOOSING FILE
     file = tkinter.filedialog.askopenfilename(initialdir="/", title='Proszę wybierz plik z danymi prelegentów')
 
@@ -48,23 +58,18 @@ def loadfile() -> None:
         title = (element[3])
         full_name = (degree + " " + name)
         file_name = (name + ".pdf")
-        conference_image = '/Users/tomek/Desktop/11.jpeg'
-        conference_text = 'ktora odbyla sie w dniach 05-06 marca 2022 r. w Instytucie Badan Informacji i ' \
+        conference_image = conf_title_img
+        conference_text = 'która odbyla sie w dniach 05-06 marca 2022 r. w Instytucie Badan Informacji i ' \
                           'Komunikacji Uniwersytetu Mikolaja Kopernika w Toruniu i wyglosil/a referat, pt.:'
 
         # PDF FILE
-        pdf = PDF()
+        pdf = PDF(orientation='P', unit='mm', format='A4')
         pdf.add_page()
         pdf.set_font('Arial', 'B', 16)
         pdf.cell(100, 80, '', ln=2, align='C')  # JUST TO SET EMPTY SPACE ABOVE TEXT
         pdf.cell(0, 10, full_name, ln=2, align='C')
         pdf.cell(0, 10, 'uczestniczyl/a w', ln=2, align='C')
-        pdf.image(conference_image, w=10, h=10, type='JPEG')
+        pdf.image(conference_image, x=-75, w=350, h=0, type='')
         pdf.multi_cell(0, 10, conference_text , align='C')
         pdf.cell(0, 10, title, align='C')
-        pdf.output(file_name, 'F')
-
-
-def generate() -> None:
-    """Probably will be deleted..."""
-    pass
+        pdf.output((directory+"/"+file_name), "F")

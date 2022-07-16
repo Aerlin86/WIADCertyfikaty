@@ -35,9 +35,6 @@ choosedir_button.grid(row=3, column=0, columnspan=3, sticky=tk.W+tk.E)
 choosedir_button = ttk.Button(buttons, text="Wybierz plik z danymi", command=loadfile)
 choosedir_button.grid(row=4, column=0, columnspan=3, sticky=tk.W+tk.E)
 
-makedir_button = ttk.Button(buttons, text="GENERUJ", command=generate)
-makedir_button.grid(row=5, column=0, columnspan=3, sticky=tk.W+tk.E)
-
 quit_button = ttk.Button(buttons, text="Wyjście", command=root.destroy)
 quit_button.grid(row=6, column=1)
 
