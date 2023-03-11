@@ -23,14 +23,8 @@ buttons.grid()
 choosefile_button = ttk.Button(buttons, text="Wybierz miejsce zapisu", command=save_to)
 choosefile_button.grid(row=0, column=0, columnspan=3, sticky=tk.W+tk.E)
 
-choosedir_button = ttk.Button(buttons, text="Wybierz logo", command=header_logo)
-choosedir_button.grid(row=1, column=0, columnspan=3, sticky=tk.W+tk.E)
-
-choosedir_button = ttk.Button(buttons, text="Wybierz nazwę konferencji", command=conference_title)
+choosedir_button = ttk.Button(buttons, text="Wybierz layout konferencji", command=conference_title)
 choosedir_button.grid(row=2, column=0, columnspan=3, sticky=tk.W+tk.E)
-
-choosedir_button = ttk.Button(buttons, text="Wybierz sponsorów", command=footer_sponsors)
-choosedir_button.grid(row=3, column=0, columnspan=3, sticky=tk.W+tk.E)
 
 choosedir_button = ttk.Button(buttons, text="Wybierz plik z danymi", command=loadfile)
 choosedir_button.grid(row=4, column=0, columnspan=3, sticky=tk.W+tk.E)
