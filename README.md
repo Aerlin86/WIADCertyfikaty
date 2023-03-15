@@ -1,5 +1,5 @@
 # WIADCertyfikaty
-ver.0.3, 15.03.2023<br>
+ver.0.4, 15.03.2023<br>
 ++++PL only, EN some time later++++<br>
 Aplikacja do automatycznego tworzenia certyfikatów dla uczestników konferencji -
 <a href="https://wiad.umk.pl/pages/main_page/">Światowego Dnia Architektury Informacji w Toruniu.</a><br>
