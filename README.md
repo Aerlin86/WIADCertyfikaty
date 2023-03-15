@@ -11,7 +11,7 @@ III. Wybierz folder do zapisu certyfikatów<br>
 IV. Wybierz plik z graficznym layoutem konferencji (format A4 210mmx297mm)<br>
 V. Wybierz plik .xlxs z danymi uczestników<br>
 <br>
--Wybrany font <a href="https://fonts.google.com/specimen/Lato">Lato</a> w związku z użyciem go przez UMK<br>
+-Wybrano font <a href="https://fonts.google.com/specimen/Lato">Lato</a> w związku z użyciem go w indentyfikacji wizualnej UMK<br>
 -Pliki PDF tworzą się automatycznie w momencie wybrania pliku z danymi uczestników<br>
 -Istotna jest kolejność wykonywania czynności<br>
 -Po wybraniu pliku z danymi uczestników można wyjść z aplikacji<br>
